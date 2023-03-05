@@ -1,30 +1,11 @@
-import React, { Component } from 'react'
-import { HashRouter, Switch, Route, Redirect } from 'react-router-dom'
-import Login from '../login/index'
-import { isLogin } from '../../utils/token'
+import React, { useEffect, useState } from "react"
+import { useRoutes } from "react-router-dom"
 
-import Frame from './index'
-class AppRoute extends Component {
-  render() {
-    return (
-      <HashRouter>
-        <Switch>
-          <Route path="/login" component={Login} />
-          <Route
-            path="/"
-            render={() => {
-              if (isLogin()) {
-                return <Frame />
-              } else {
-                return <Redirect to="/login" />
-              }
-            }}
-          />
-        </Switch>
-      </HashRouter>
-    )
-  }
+import { generateRouter } from './utils'
+import routerList from './list'
+
+const AppRouter = () => {
+  return useRoutes(generateRouter(routerList))
 }
 
-
-export default AppRoute
+export default AppRouter
