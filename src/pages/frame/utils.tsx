@@ -1,6 +1,6 @@
 import React, {Suspense} from 'react'
 import KeepAlive from 'react-activation'
-import routerList from "./list"
+import routerList from './list'
 
 // 路由处理方式
 const generateRouter = (routers: any[]) => {
@@ -10,6 +10,7 @@ const generateRouter = (routers: any[]) => {
         }
 
         if (item.keepAlive) {
+            console.log(item.path+':'+item.keepAlive)
             item.element = <KeepAlive saveScrollPosition="screen"><Suspense fallback={
                 <div>加载中</div>
             }>
@@ -30,8 +31,7 @@ const generateRouter = (routers: any[]) => {
 }
 
 const checkRouterAuth = (path:string) => {
-    const auth = checkAuth(routerList, path) || null
-    return auth
+    return checkAuth(routerList, path) || null
 }
 // 根据路径获取路由
 const checkAuth = (routers:any[], path:string) => {
