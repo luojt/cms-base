@@ -44,14 +44,14 @@ const userReducer: Reducer<Frame.UserInfo, IAction<any>> = (
     case SET_USER_INFO:
       LocalStore.setValue(USER_KEY, payload)
       setToken(payload.token)
-      window.location.href = '/home'
+      window.location.href = '/'
       return {
         ...payload
       }
     case SET_USER_LOGOUT:
       LocalStore.removeValue(USER_KEY)
       removeToken()
-      window.location.href = '/login'
+      window.location.href = '/'
       return {
         ...initUser
       }

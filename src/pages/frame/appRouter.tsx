@@ -1,10 +1,10 @@
-import React from 'react'
+import React, {memo} from 'react'
 import {useRoutes} from 'react-router-dom'
 import {generateRouter} from './utils'
 import routerList from './list'
 
-const AppRouter = () => {
+const AppRouter = memo(()=> {
     return useRoutes(generateRouter(routerList))
-}
+})
 
 export default AppRouter

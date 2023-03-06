@@ -8,20 +8,19 @@ import zhCN from 'antd/lib/locale/zh_CN'
 import enUs from 'antd/lib/locale/en_US'
 import './assets/style/index.less'
 import {HashRouter} from 'react-router-dom'
-import AppRouter from "./pages/frame/appRouter"
-import {AliveScope} from "react-activation"
+import AppRouter from './pages/frame/appRouter'
+import {AliveScope} from 'react-activation'
 
 ReactDOM.render(
     /*antd为组件提供统一的全局化配置。*/
     <ConfigProvider locale={zhCN}>
-        <AliveScope>
-            <Provider store={store}>
+        <Provider store={store}>
+            <AliveScope>
                 <HashRouter>
                     <AppRouter/>
                 </HashRouter>
-            </Provider>
-        </AliveScope>
-
+            </AliveScope>
+        </Provider>
     </ConfigProvider>,
     document.getElementById('root')
 )

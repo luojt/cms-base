@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react"
-import { useNavigate, useLocation, Outlet } from "react-router-dom"
-import {isLogin} from "../../utils/token"
-import {checkRouterAuth} from "./utils"
+import React, {useEffect, useState} from 'react'
+import {useNavigate, useLocation, Outlet} from 'react-router-dom'
+import {isLogin} from '../../utils/token'
+import {checkRouterAuth} from './utils'
 
 
 const RouterBeforeEach = () => {
@@ -21,7 +21,7 @@ const RouterBeforeEach = () => {
         }
         setAuth(true)
     }, [])
-    return auth ? <Outlet /> : null
+    return auth ? <Outlet/> : null
 }
 
 export default RouterBeforeEach
