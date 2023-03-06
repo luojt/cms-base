@@ -14,7 +14,8 @@
     "react-scripts": "4.0.3",
     "web-vitals": "^1.0.1",
     "react-activation": "^0.11.2",
-    "typescript": "^4.1.5"
+    "typescript": "^4.1.5",
+    "history": "^5.0.0"
   },
   "devDependencies": {
     "@babel/plugin-proposal-decorators": "^7.16.0",

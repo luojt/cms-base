@@ -13,7 +13,7 @@ export interface Config {
 const AdminConfig: Config = {
   TOKEN_KEY: 'TOKEN_KEY',
   LOGIN_LIMIT_KEY: 'LOGIN_LIMIT_KEY',
-  ADMIN_NAME: 'CMS管理台',
+  ADMIN_NAME: 'XXXX后台管理系统',
   LOGIN_LIMIT_TIME: 10 * 60 * 60 * 1000,
   HOME_ROUTER_PATH: '/home',
   HOME_NAME: '首页',

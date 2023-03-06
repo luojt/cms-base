@@ -17,31 +17,37 @@ const routerList = [
         path: "/",
         component: lazy(() => import('../frame')),
         auth: true,
+        keepAlive:true,
         children: [
             {
                 path: '/home',
                 component: Home,
-                auth: true
+                auth: true,
+                keepAlive:true
             },
             {
                 path: '/404',
                 component: Error,
-                auth: false
+                auth: false,
+                keepAlive:true
             },
             {
                 path: '/test',
                 component: Test,
-                auth: true
+                auth: true,
+                keepAlive:true
             },
             {
                 path: '/system-account',
                 component: SystemAccount,
-                auth: true
+                auth: true,
+                keepAlive:true
             },
             {
                 path: '/system-permission',
                 component: Permission,
-                auth: true
+                auth: true,
+                keepAlive:true
             }
 
         ]
