@@ -17,6 +17,7 @@ const TagList: React.FC = () => {
     const frameState: Frame.Frame = useSelector<IStoreState, Frame.Frame>(state => state.frame)
     const {taglist} = frameState
     const location = useLocation()
+    // const currentPath = location.pathname+location.search
     const currentPath = location.pathname
 
     const menuItem = (

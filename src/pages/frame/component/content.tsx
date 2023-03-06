@@ -1,7 +1,7 @@
 import React, {Suspense} from 'react'
 import {Layout, Spin} from 'antd'
 import '../index.less'
-import RouterBeforeEach from "../RouterBeforEach"
+import RouterBeforeEach from '../RouterBeforEach'
 
 const ContentLayout: React.FC = () => {
     return (

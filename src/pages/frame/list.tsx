@@ -9,12 +9,12 @@ const Permission = lazy(() => import(/* webpackChunkName: 'SystemAdmin' */ '../.
 
 const routerList = [
     {
-        path: "/login",
+        path: '/login',
         component: lazy(() => import('../login')),
         auth: false
     },
     {
-        path: "/",
+        path: '/',
         component: lazy(() => import('../frame')),
         auth: true,
         keepAlive:true,

@@ -2,7 +2,7 @@ import React from 'react'
 import {Button, Row, Col} from 'antd'
 import errorImg from '../../assets/images/404.png'
 import './index.less'
-import {useNavigate} from "react-router-dom"
+import {useNavigate} from 'react-router-dom'
 
 const Error: React.FC = () => {
     const navigate = useNavigate()

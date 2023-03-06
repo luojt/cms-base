@@ -19,7 +19,7 @@ const Test: React.FC = () => {
                 }}
             >
                 <p>{text}</p>
-                <button onClick={()=>setText("88")}>点击更改</button>
+                <button onClick={()=>setText('88')}>点击更改</button>
             </div>
         </div>
     )

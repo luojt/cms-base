@@ -6,7 +6,7 @@ import {checkRouterAuth} from './utils'
 
 const RouterBeforeEach = () => {
     const navigate = useNavigate()
-    const [auth, setAuth] = useState(false)
+    const [loginState, setLoginState] = useState(false)
     const location = useLocation()
     useEffect(() => {
         /*if (utils.exenv.isMobileDevice()) {
@@ -16,12 +16,12 @@ const RouterBeforeEach = () => {
         if (!isLogin()) {
             return navigate('/login')
         }
-        if (obj.path === '/login') {
-            return navigate('/')
+        if (obj.path === '/login' || obj.path === '/') {
+            navigate('/home')
         }
-        setAuth(true)
+        setLoginState(true)
     }, [])
-    return auth ? <Outlet/> : null
+    return loginState ? <Outlet/> : null
 }
 
 export default RouterBeforeEach
