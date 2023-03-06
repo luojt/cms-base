@@ -1,5 +1,6 @@
 import React, {Suspense} from 'react'
 import KeepAlive from 'react-activation'
+import routerList from "./list"
 
 // 路由处理方式
 const generateRouter = (routers: any[]) => {
@@ -28,5 +29,19 @@ const generateRouter = (routers: any[]) => {
     })
 }
 
-
-export {generateRouter}
+const checkRouterAuth = (path:string) => {
+    const auth = checkAuth(routerList, path) || null
+    return auth
+}
+// 根据路径获取路由
+const checkAuth = (routers:any[], path:string) => {
+    for (const data of routers) {
+        if (data.path === path) return data
+        if (data.children) {
+            const res: any = checkAuth(data.children, path)
+            if (res) return res
+        }
+    }
+    return null
+}
+export {generateRouter,checkRouterAuth}

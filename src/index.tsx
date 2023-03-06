@@ -11,7 +11,7 @@ import {HashRouter} from 'react-router-dom'
 import Login from './pages/login'
 import {isLogin} from './utils/token'
 import Frame from './pages/frame'
-import AppRouter from "./pages/frame/appRouter";
+import AppRouter from "./pages/frame/appRouter"
 
 ReactDOM.render(
     /*antd为组件提供统一的全局化配置。*/
