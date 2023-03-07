@@ -9,47 +9,41 @@ const Permission = lazy(() => import(/* webpackChunkName: 'SystemAdmin' */ '../.
 const Login = lazy(() => import('../login'))
 const Frame = lazy(() => import('../frame'))
 
+
 const routerList = [
     {
         path: '/login',
-        component: Login,
-        auth: false
+        component: <Login/>
     },
     {
         path: '/',
-        component: Frame,
-        auth: true,
-        keepAlive:false,
+        component: <Frame/>,
+        keepAlive: false,
         children: [
             {
                 path: '/home',
-                component: Home,
-                auth: true,
-                keepAlive:true
+                component: <Home/>,
+                keepAlive: true
             },
             {
                 path: '/404',
-                component: Error,
-                auth: false,
-                keepAlive:true
+                component: <Error/>,
+                keepAlive: true
             },
             {
                 path: '/test',
-                component: Test,
-                auth: true,
-                keepAlive:true
+                component: <Test/>,
+                keepAlive: true
             },
             {
                 path: '/system-account',
-                component: SystemAccount,
-                auth: true,
-                keepAlive:true
+                component: <SystemAccount/>,
+                keepAlive: true
             },
             {
                 path: '/system-permission',
-                component: Permission,
-                auth: true,
-                keepAlive:true
+                component: <Permission/>,
+                keepAlive: true
             }
         ]
     }

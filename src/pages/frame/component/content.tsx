@@ -2,20 +2,20 @@ import React, {Suspense} from 'react'
 import {Layout, Spin} from 'antd'
 import '../index.less'
 import RouterBeforeEach from '../RouterBeforEach'
+import {Outlet} from 'react-router-dom'
 
 const ContentLayout: React.FC = () => {
     return (
         <Layout.Content className="dis-fl fd-c" style={{marginRight: 16}}>
-            <Suspense
+            {/*<Suspense
                 fallback={
                     <div className="dis-fl jc-ct ai-ct" style={{height: '100vh'}}>
                         <Spin size="large"/>
                     </div>
                 }
             >
-
-                <RouterBeforeEach/>
-            </Suspense>
+            </Suspense>*/}
+            <Outlet/>
         </Layout.Content>
     )
 }

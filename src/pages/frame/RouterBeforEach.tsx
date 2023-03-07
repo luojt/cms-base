@@ -16,10 +16,10 @@ const RouterBeforeEach = () => {
         if (!isLogin()) {
             return navigate('/login')
         }
-        if (obj.path === '/login' || obj.path === '/') {
-            navigate('/home')
-        }
         setLoginState(true)
+        if (obj.path === '/login' || obj.path === '/') {
+            return navigate('/home')
+        }
     }, [])
     return loginState ? <Outlet/> : null
 }

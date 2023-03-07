@@ -1,6 +1,8 @@
 import React, {Suspense} from 'react'
 import KeepAlive from 'react-activation'
 import routerList from './list'
+import {RequireAuth} from '../../component/RequireAuth'
+
 
 // 路由处理方式
 const generateRouter = (routers: any[]) => {
@@ -10,12 +12,11 @@ const generateRouter = (routers: any[]) => {
         }
 
         if (item.keepAlive) {
-            console.log(item.path+':'+item.keepAlive)
             item.element = <KeepAlive saveScrollPosition="screen"><Suspense fallback={
                 <div>加载中</div>
             }>
                 {/* 把懒加载的异步路由变成组件装载进去 */}
-                <item.component/>
+                <RequireAuth>{item.component}</RequireAuth>
             </Suspense></KeepAlive>
 
         } else {
@@ -23,18 +24,18 @@ const generateRouter = (routers: any[]) => {
                 <div>加载中</div>
             }>
                 {/* 把懒加载的异步路由变成组件装载进去 */}
-                <item.component/>
+                <RequireAuth>{item.component}</RequireAuth>
             </Suspense>
         }
         return item
     })
 }
 
-const checkRouterAuth = (path:string) => {
+const checkRouterAuth = (path: string) => {
     return checkAuth(routerList, path) || null
 }
 // 根据路径获取路由
-const checkAuth = (routers:any[], path:string) => {
+const checkAuth = (routers: any[], path: string) => {
     for (const data of routers) {
         if (data.path === path) return data
         if (data.children) {
@@ -44,4 +45,4 @@ const checkAuth = (routers:any[], path:string) => {
     }
     return null
 }
-export {generateRouter,checkRouterAuth}
+export {generateRouter, checkRouterAuth}
