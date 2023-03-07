@@ -6,18 +6,20 @@ const Test = lazy(() => import(/* webpackChunkName: 'error' */ '../../pages/test
 
 const SystemAccount = lazy(() => import(/* webpackChunkName: 'SystemAdmin' */ '../../pages/system/account'))
 const Permission = lazy(() => import(/* webpackChunkName: 'SystemAdmin' */ '../../pages/system/permission'))
+const Login = lazy(() => import('../login'))
+const Frame = lazy(() => import('../frame'))
 
 const routerList = [
     {
         path: '/login',
-        component: lazy(() => import('../login')),
+        component: Login,
         auth: false
     },
     {
         path: '/',
-        component: lazy(() => import('../frame')),
+        component: Frame,
         auth: true,
-        keepAlive:true,
+        keepAlive:false,
         children: [
             {
                 path: '/home',
@@ -49,7 +51,6 @@ const routerList = [
                 auth: true,
                 keepAlive:true
             }
-
         ]
     }
 
