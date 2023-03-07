@@ -15,11 +15,11 @@ ReactDOM.render(
     /*antd为组件提供统一的全局化配置。*/
     <ConfigProvider locale={zhCN}>
         <Provider store={store}>
-            <AliveScope>
-                <HashRouter>
+            <HashRouter>
+                <AliveScope>
                     <AppRouter/>
-                </HashRouter>
-            </AliveScope>
+                </AliveScope>
+            </HashRouter>
         </Provider>
     </ConfigProvider>,
     document.getElementById('root')
