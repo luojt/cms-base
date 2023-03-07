@@ -3,7 +3,7 @@ import {isLogin} from '../../utils/token'
 import {checkRouterAuth} from '../../pages/frame/utils'
 
 
-export function RequireAuth({children}: { children: JSX.Element }):any {
+export function RequireAuth({children}: { children: JSX.Element }) {
     const location = useLocation()
     const navigate = useNavigate()
     const obj = checkRouterAuth(location.pathname)
